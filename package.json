@@ -10,6 +10,13 @@
     "pdfmake": "^0.1.54",
     "roboto-font": "^0.1.0"
   },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/lapisanlangit/formatdata-plugin-pdfmake"
+  },
+  "bugs": {
+    "url": "https://github.com/lapisanlangit/formatdata-plugin-pdfmake"
+  },
   "author": "Umar Jati",
   "license": "ISC"
 }
