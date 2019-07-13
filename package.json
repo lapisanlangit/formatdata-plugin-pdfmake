@@ -1,0 +1,15 @@
+{
+  "name": "formatdata-plugin-pdfmake",
+  "version": "1.0.4",
+  "description": "Format data for table pdfmake",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "pdfmake": "^0.1.54",
+    "roboto-font": "^0.1.0"
+  },
+  "author": "Umar Jati",
+  "license": "ISC"
+}
