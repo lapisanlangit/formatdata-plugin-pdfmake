@@ -1,22 +1,22 @@
 {
-  "name": "formatdata-plugin-pdfmake",
-  "version": "1.0.5",
-  "description": "Format data for table pdfmake",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "pdfmake": "^0.1.54",
-    "roboto-font": "^0.1.0"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/lapisanlangit/formatdata-plugin-pdfmake"
-  },
-  "bugs": {
-    "url": "https://github.com/lapisanlangit/formatdata-plugin-pdfmake"
-  },
-  "author": "Umar Jati",
-  "license": "ISC"
+    "name": "formatdata-plugin-pdfmake",
+    "version": "1.0.6",
+    "description": "Format data for table pdfmake",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {
+        "pdfmake": "^0.1.54",
+        "roboto-font": "^0.1.0"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/lapisanlangit/formatdata-plugin-pdfmake"
+    },
+    "bugs": {
+        "url": "https://github.com/lapisanlangit/formatdata-plugin-pdfmake"
+    },
+    "author": "Umar Jati",
+    "license": "ISC"
 }

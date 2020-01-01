@@ -1,56 +1,42 @@
-
 module.exports = {
-    formatTable: function (data, columns, styles, nameColumn) {
+    formatTable: function(data, columns, styles, nameColumn) {
         var body = [];
-        
+
         if (nameColumn.length > 0) {
             body.push(nameColumn);
         }
-        
-        //check columns with content column
-        var columnsIn = data[0];
-        // loop through every key in the object
-        listColumn=[]
-        for(var key in columnsIn){
-            listColumn.push(key)       
-        } 
 
-     
-        var res = columns.filter( function(n) { return !this.has(n) }, new Set(listColumn));
-        if(res.length >0){
-            console.log('Columns name is not found ',res)
-            return;
-        }
 
-        data.forEach(function (row) {
-            
+
+        data.forEach(function(row) {
+
             var dataRow = [];
             for (let i = 0; i < columns.length; i++) {
                 if (columns[i].constructor === Array) {
                     var rows = '';
                     var objColumns = {};
-                    columns[i].forEach(function (content) {
+                    columns[i].forEach(function(content) {
 
                         rows = rows + row[content].toString() + '\n';
-            
+
                         var objColumn = {};
                         var arrays = [];
                         objColumn['text'] = rows.toString();
                         objColumn['style'] = styles[i].toString();
-                        if(objColumn['text'].trim()=='null'){
-                            objColumn['text']=''
+                        if (objColumn['text'].trim() == 'null') {
+                            objColumn['text'] = ''
                         }
                         objColumns = objColumn;
                     })
-                   
+
                     dataRow.push(objColumns);
                 } else {
-                    var objColumn = {};  
-               
+                    var objColumn = {};
+
                     objColumn['text'] = row[columns[i]].toString();
                     objColumn['style'] = styles[i].toString();
-                    if(objColumn['text'].trim()=='null'){
-                        objColumn['text']=''
+                    if (objColumn['text'].trim() == 'null') {
+                        objColumn['text'] = ''
                     }
                     dataRow.push(objColumn);
                 }
@@ -62,7 +48,7 @@ module.exports = {
         return body;
     },
 
-    formatRow: function (listJson, nmstyle, indexCondition, condition) {
+    formatRow: function(listJson, nmstyle, indexCondition, condition) {
         for (let index = 1; index < listJson.length; index++) {
             const element = listJson[index][indexCondition].text;
             if (element == condition) {
@@ -79,7 +65,7 @@ module.exports = {
         return listJson
     },
 
-    formatThousand: function (number) {
+    formatThousand: function(number) {
         var number_string = number.toString(),
             split = number_string.split('.'),
             rest = split[0].length % 3,
@@ -95,7 +81,7 @@ module.exports = {
     },
 
 
-    formatColSpan: function (listJson, kolomKe, jmlKolom) {
+    formatColSpan: function(listJson, kolomKe, jmlKolom) {
         for (let index = 1; index < listJson.length; index++) {
             var objColumn = {};
             objColumn['text'] = listJson[index][kolomKe].text;
@@ -109,14 +95,12 @@ module.exports = {
         return listJson
     },
 
-    formatDate:function(strDate) {
+    formatDate: function(strDate) {
         var str = strDate;
         var xyear = str.substr(0, 4);
         var xmonth = str.substr(5, 2);
         var xdate = str.substr(8, 2);
-      
+
         return xdate + '-' + xmonth + '-' + xyear;
-      }
+    }
 }
-
-
