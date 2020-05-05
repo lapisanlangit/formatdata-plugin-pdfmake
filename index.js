@@ -48,6 +48,57 @@ module.exports = {
         return body;
     },
 
+    formatTable2: function(data, columns, styles, colSpan, nameColumn) {
+        var body = [];
+
+        if (nameColumn.length > 0) {
+            body.push(nameColumn);
+        }
+
+
+
+        data.forEach(function(row) {
+
+            var dataRow = [];
+            for (let i = 0; i < columns.length; i++) {
+                if (columns[i].constructor === Array) {
+                    var rows = '';
+                    var objColumns = {};
+                    columns[i].forEach(function(content) {
+
+                        rows = rows + row[content].toString() + '\n';
+
+                        var objColumn = {};
+                        var arrays = [];
+                        objColumn['text'] = rows.toString();
+                        objColumn['style'] = styles[i].toString();
+                        objColumn['colSpan'] = colSpan[i];
+                        if (objColumn['text'].trim() == 'null') {
+                            objColumn['text'] = ''
+                        }
+                        objColumns = objColumn;
+                    })
+
+                    dataRow.push(objColumns);
+                } else {
+                    var objColumn = {};
+
+                    objColumn['text'] = row[columns[i]].toString();
+                    objColumn['style'] = styles[i].toString();
+                    objColumn['colSpan'] = colSpan[i];
+                    if (objColumn['text'].trim() == 'null') {
+                        objColumn['text'] = ''
+                    }
+                    dataRow.push(objColumn);
+                }
+
+            }
+            body.push(dataRow);
+        });
+
+        return body;
+    },
+
     formatRow: function(listJson, nmstyle, indexCondition, condition) {
         for (let index = 1; index < listJson.length; index++) {
             const element = listJson[index][indexCondition].text;
