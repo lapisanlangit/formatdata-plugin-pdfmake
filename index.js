@@ -48,7 +48,7 @@ module.exports = {
         return body;
     },
 
-    formatTable2: function(data, columns, styles, colSpan, nameColumn) {
+    formatTableColSpan: function(data, columns, styles, colSpan, nameColumn) {
         var body = [];
 
         if (nameColumn.length > 0) {
