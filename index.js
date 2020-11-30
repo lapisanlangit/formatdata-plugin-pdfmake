@@ -33,7 +33,11 @@ module.exports = {
                 } else {
                     var objColumn = {};
 
-                    objColumn['text'] = row[columns[i]].toString();
+                    var colRows=row[columns[i]]
+                    if(colRows==null){
+                        colRows=''
+                    }
+                    objColumn['text'] = colRows.toString();
                     objColumn['style'] = styles[i].toString();
                     if (objColumn['text'].trim() == 'null') {
                         objColumn['text'] = ''
@@ -82,8 +86,11 @@ module.exports = {
                     dataRow.push(objColumns);
                 } else {
                     var objColumn = {};
-
-                    objColumn['text'] = row[columns[i]].toString();
+                    var colRows=row[columns[i]]
+                    if(colRows==null){
+                        colRows=''
+                    }
+                    objColumn['text'] = colRows.toString();
                     objColumn['style'] = styles[i].toString();
                     objColumn['colSpan'] = colSpan[i];
                     if (objColumn['text'].trim() == 'null') {
