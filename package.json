@@ -1,6 +1,6 @@
 {
     "name": "formatdata-plugin-pdfmake",
-    "version": "1.0.10",
+    "version": "1.0.11",
     "description": "Format data for table pdfmake",
     "main": "index.js",
     "scripts": {

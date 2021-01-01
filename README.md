@@ -77,30 +77,30 @@ Examples
 
 	// create array from json
 
-	var dd = {
-		content: [
-			{
-				table: {
-					widths: [30, 60],
-					body: resultTable
-				}
-			}
-		],
+    var dd = {
+            content: [
+                {
+                    table: {
+                        widths: [30, 60],
+                        body: resultTable
+                    }
+                }
+            ],
 
-    styles: {
-        headerStyle: {
-            bold: true,
-            color: 'black',
-            alignment: 'center'
+        styles: {
+            headerStyle: {
+                bold: true,
+                color: 'black',
+                alignment: 'center'
+            },
+            noSytle: {
+                alignment: 'center'
+            },
+            monthStyle: {
+                alignment: 'left'
+            },
+            
         },
-        noSytle: {
-            alignment: 'center'
-        },
-        monthStyle: {
-            alignment: 'left'
-        },
-        
-    },
 	}
 
 	var pdfDoc = printer.createPdfKitDocument(dd);
