@@ -135,7 +135,12 @@ module.exports = {
             numeric += separator + thousand.join('.');
         }
         numeric = split[1] != undefined ? numeric + ',' + split[1] : numeric;
-        return numeric
+        if (number < 0) {
+            return "-"+numeric 
+
+        } else {
+            return numeric
+        }
     },
 
 
