@@ -124,12 +124,13 @@ module.exports = {
     },
 
     formatThousand: function(number) {
-        var number_string = number.toString(),
-            split = number_string.split('.'),
-            rest = split[0].length % 3,
-            numeric = split[0].substr(0, rest),
-            thousand = split[0].substr(rest).match(/\d{1,3}/gi);
-
+  
+        var number_string = Math.abs(number).toString()
+        var split = number_string.split('.')
+        var rest = split[0].length % 3
+        var numeric = split[0].substr(0, rest)
+        var thousand = split[0].substr(rest).match(/\d{1,3}/gi);
+    
         if (thousand) {
             let separator = rest ? '.' : '';
             numeric += separator + thousand.join('.');
